@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <h1>Vue Business Hours</h1>
+    <h1>Vue Business Hours Demo</h1>
     <p>Vue component for setting business hours in an administration panel.</p>
     <a href="https://github.com/sbarry50/vue-business-hours">Github</a>
     <div class="demo-component">

@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <h1>Vue Business Hours Demo</h1>
+    <h1>Vue Business Hours</h1>
     <p>Vue component for setting business hours in an administration panel.</p>
     <a href="https://github.com/sbarry50/vue-business-hours">Github</a>
     <div class="demo-component">
@@ -35,6 +35,16 @@
         :hour-format24="true"
       ></business-hours>
     </div>
+    <div class="demo-component">
+      <h2>Business Hours w/ Event Emitter</h2>
+      <p>
+        <em>
+          Open your console and update hours in the component to see the events
+          firing.
+        </em>
+      </p>
+      <business-hours :days="demoDaysEmit" @updated-hours="updatedHours"></business-hours>
+    </div>
   </div>
 </template>
 
@@ -44,6 +54,7 @@ import demoDaysSpanish from "./data/demoDaysSpanish";
 import demoHolidays from "./data/demoHolidays";
 import demoDaysErrors from "./data/demoDaysErrors";
 import demoSpanishLocalization from "./data/demoSpanishLocalization";
+import demoDaysEmit from "./data/demoDaysEmit";
 
 export default {
   data() {
@@ -52,8 +63,15 @@ export default {
       demoDaysSpanish: demoDaysSpanish,
       demoHolidays: demoHolidays,
       demoDaysErrors: demoDaysErrors,
-      demoSpanishLocalization: demoSpanishLocalization
+      demoSpanishLocalization: demoSpanishLocalization,
+      demoDaysEmit: demoDaysEmit
     };
+  },
+  methods: {
+    updatedHours: function(val) {
+      // eslint-disable-next-line
+      console.log(val);
+    }
   }
 };
 </script>
